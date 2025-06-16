@@ -1,6 +1,7 @@
 let num1 = 0;
 let num2;
 let operation;
+let result = false;
 
 function add(a, b) {
     return a + b;
@@ -28,7 +29,12 @@ function operate(a, b, c) {
 }
 
 function updateNumber(a) {
-    if (operation == null) {
+    if (result == true) {
+        clearCalculator();
+        result = false;
+        num1 = a;
+    }
+    else if (operation == null) {
         if (num1 == null) {
             num1 = a;
         }
@@ -48,15 +54,40 @@ function updateNumber(a) {
 }
 
 function updateOperation(a) {
+    if (num2 != null) {
+        calculate();
+    }
     operation = a;
+    result = false;
+    updateDisplay();
+}
+
+function backspaceNumber() {
+    if (operation == null) {
+        if (num1 >= 10) {
+            num1 = (num1 - (num1 % 10))/10;
+        }
+        else {
+            num1 = 0;
+        }
+    }
+    else {
+        if (num2 >= 10) {
+            num2 = (num2 - (num2 % 10))/10;
+        }
+        else {
+            num2 = 0;
+        }
+    }
     updateDisplay();
 }
 
 function calculate() {
     if (num1 != null && operation != null && num2 != null) {
-        num1 = operate(num1, num2, operation);
+        num1 = Math.floor(operate(num1, num2, operation) * 10000)/10000;
         num2 = null;
         operation = null;
+        result = true;
     }
     updateDisplay();
 }
