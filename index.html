@@ -7,6 +7,38 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Hello, world.</h1>
+        <h1>Calculator</h1>
+        <div class="container">
+            <div class="display">
+                <p id="display-text">0</p>
+            </div>
+            <div class="row">
+                <button type="button" onclick="updateNumber(7)">7</button>
+                <button type="button" onclick="updateNumber(8)">8</button>
+                <button type="button" onclick="updateNumber(9)">9</button>
+                <button type="button">/</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="updateNumber(4)">4</button>
+                <button type="button" onclick="updateNumber(5)">5</button>
+                <button type="button" onclick="updateNumber(6)">6</button>
+                <button type="button">*</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="updateNumber(1)">1</button>
+                <button type="button" onclick="updateNumber(2)">2</button>
+                <button type="button" onclick="updateNumber(3)">3</button>
+                <button type="button">-</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="updateNumber(0)">0</button>
+                <button type="button">.</button>
+                <button type="button">=</button>
+                <button type="button">+</button>
+            </div>
+            <div class="row">
+                <button type="button" onclick="clearCalculator()">C</button>
+            </div>
+        </div>
     </body>
 </html>
