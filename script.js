@@ -1,4 +1,4 @@
-let num1;
+let num1 = 0;
 let num2;
 let operation;
 
@@ -47,6 +47,20 @@ function updateNumber(a) {
     updateDisplay();
 }
 
+function updateOperation(a) {
+    operation = a;
+    updateDisplay();
+}
+
+function calculate() {
+    if (num1 != null && operation != null && num2 != null) {
+        num1 = operate(num1, num2, operation);
+        num2 = null;
+        operation = null;
+    }
+    updateDisplay();
+}
+
 function clearCalculator() {
     num1 = 0;
     num2 = null;
@@ -56,5 +70,22 @@ function clearCalculator() {
 
 function updateDisplay() {
     displayText = num1;
+    if (operation != null) {
+        if (operation == add) {
+            displayText += " + "
+        }
+        else if (operation == subtract) {
+            displayText += " - "
+        }
+        else if (operation == multiply) {
+            displayText += " x "
+        }
+        else if (operation == divide) {
+            displayText += " / "
+        }
+        if (num2 != null) {
+            displayText += num2;
+        }
+    }
     document.querySelector("#display-text").textContent = displayText;
 }

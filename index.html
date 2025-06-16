@@ -16,25 +16,25 @@
                 <button type="button" onclick="updateNumber(7)">7</button>
                 <button type="button" onclick="updateNumber(8)">8</button>
                 <button type="button" onclick="updateNumber(9)">9</button>
-                <button type="button">/</button>
+                <button type="button" onclick="updateOperation(divide)">/</button>
             </div>
             <div class="row">
                 <button type="button" onclick="updateNumber(4)">4</button>
                 <button type="button" onclick="updateNumber(5)">5</button>
                 <button type="button" onclick="updateNumber(6)">6</button>
-                <button type="button">*</button>
+                <button type="button" onclick="updateOperation(multiply)">x</button>
             </div>
             <div class="row">
                 <button type="button" onclick="updateNumber(1)">1</button>
                 <button type="button" onclick="updateNumber(2)">2</button>
                 <button type="button" onclick="updateNumber(3)">3</button>
-                <button type="button">-</button>
+                <button type="button" onclick="updateOperation(subtract)">-</button>
             </div>
             <div class="row">
                 <button type="button" onclick="updateNumber(0)">0</button>
                 <button type="button">.</button>
-                <button type="button">=</button>
-                <button type="button">+</button>
+                <button type="button" onclick="calculate()">=</button>
+                <button type="button" onclick="updateOperation(add)">+</button>
             </div>
             <div class="row">
                 <button type="button" onclick="clearCalculator()">C</button>
